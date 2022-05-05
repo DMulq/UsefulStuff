@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+# Script calls API Endpoint and prints the response in JSON.  When adding this as a Lambda in AWS, make sure you have a Layer added 
+# that contains the Requests libary as this is not supoported natively by AWS Lambda.  Zip file for Lambda layer is in the repo.
 
-import requests as req
+import requests
 
-resp = req.post("https://gwapi.fcdo.missionlabs.co.uk/stats/query")
-
-print(resp.text)
+def lambda_handler(event, context):
+   response = requests.post("https://gwapi.fcdo.missionlabs.co.uk/stats/query",)
+   print(response.json())
