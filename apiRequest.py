@@ -4,5 +4,5 @@
 import requests
 
 def lambda_handler(event, context):
-   response = requests.post("https://gwapi.fcdo.missionlabs.co.uk/stats/query",)
+   response = requests.post("***ADD API HTTP END POINT HERE***",)
    print(response.json())
